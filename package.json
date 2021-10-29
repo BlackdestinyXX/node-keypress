@@ -1,10 +1,10 @@
 {
   "name": "node-keypress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple receive keypress input from users.",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "test": "tsc test.ts && node test.js"
+    "test": "tsc ./typings/test.ts && node test.js"
   },
   "author": "Bl4ckdestinyXX",
   "license": "ISC",

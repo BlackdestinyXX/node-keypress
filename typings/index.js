@@ -1,17 +1,17 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 // Import "readline" library
-const readline = require("readline");
+var readline = require("readline");
 // Set "process.stdin" as receiver of keypress events
 readline.emitKeypressEvents(process.stdin);
 // Variable that rapresents default callback, changed when "onKeypress" method is called
-let keyPressCallback = (keyObject) => {
+var keyPressCallback = function (keyObject) {
     return console.log("Please insert a callback for handle keypress");
 };
 // Set RawMode to true, for receive entire object from the event
 process.stdin.setRawMode(true);
 // Listen for keypress event
-process.stdin.on('keypress', (str, key) => {
+process.stdin.on('keypress', function (str, key) {
     // Call "keyPressCallback" as callback
     keyPressCallback(key);
 });
@@ -19,15 +19,18 @@ process.stdin.on('keypress', (str, key) => {
  * @description Main class of the library
  * @author Bl4ckdestinyXX
  **/
-class NodeKeyboard {
+var NodeKeyboard = /** @class */ (function () {
+    function NodeKeyboard() {
+    }
     /**
      * @description Main class of the library
      * @author Bl4ckdestinyXX
      * @param { Function } => Callback when a key is pressed
     **/
-    onKeypress(callback) {
+    NodeKeyboard.prototype.onKeypress = function (callback) {
         // Assign to "keyPressCallback" passed callback
         keyPressCallback = callback;
-    }
-}
-exports.default = NodeKeyboard;
+    };
+    return NodeKeyboard;
+}());
+exports["default"] = NodeKeyboard;
